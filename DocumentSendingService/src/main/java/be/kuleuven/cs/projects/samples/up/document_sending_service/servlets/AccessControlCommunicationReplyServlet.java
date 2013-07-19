@@ -33,7 +33,7 @@ public class AccessControlCommunicationReplyServlet extends HttpServlet {
         out.write("Authenticated: \n\tUser Identifier: " + userAlias + " (Authenticated = " + auth.toString() + ")\n\tTenant Identifer: " + tenantIdentifier.toString() + "\n");
         // Retrieve attributes
         Map<String, List<String>> attributes = null;
-        try {       
+        try {
 	        byte [] data = Base64.decodeBase64(service.retrieveAttributes(userAlias, "DocumentSendingService").getBytes());
 	        ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(data));
 	        attributes = (Map<String, List<String>>) ois.readObject();

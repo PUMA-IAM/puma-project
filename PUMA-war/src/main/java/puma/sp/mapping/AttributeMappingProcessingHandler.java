@@ -28,6 +28,7 @@ public class AttributeMappingProcessingHandler {
 		// this.processorMap.put(processor.getKey(), processor); 
 		// if (this.attributes.keySet().contains(processor.getKey())) 
 		// 		this.attributeMapping.put(processor.getKey(), processor);
+		//
 	}
 	
 	public Map<String, List<String>> handle() throws AttributeMappingException {
