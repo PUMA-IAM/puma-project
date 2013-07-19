@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+      <h:head>
+        <h:outputStylesheet library="css" name="default.css"/>
+        <title>Login</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:graphicImage library="images" name="puma.png"
+                            alt="Where are you from?"/>
+            <h2>
+                Incorrect username or password!
+            </h2>
+            <!--  TODO Specify -->
+            <p>	Error: could not log in. <a href="index.jsf">Try again</a>.
+            </p>
+            <h:message showSummary="true" showDetail="false"
+                       style="color: #d20005;
+                       font-family: 'New Century Schoolbook', serif;
+                       font-style: oblique;
+                       text-decoration: overline"
+                       id="errors1"
+                       for="userName"/>
+
+        </h:form>
+    </h:body>
+    </html>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/PUMA-war">
+  <Resource auth="Container"
+  driverClassName="com.mysql.jdbc.Driver" maxActive="30" maxIdle="10" maxWait="10000" name="jdbc/puma" password="admin"
+  type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/PUMA" username="admin"/>
+</Context>

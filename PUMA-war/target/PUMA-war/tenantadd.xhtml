@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>PUMA - Add a new tenant</title>
+        <script type="text/javascript">
+            function endsWith(str, suffix) {
+                return str.indexOf(suffix, str.length - suffix.length) !== -1;
+            }
+            
+            function changePossibilities() {
+                if (document.getElementById('j_idt6:federated').checked)  {
+                    document.getElementById('j_idt6:authnRed').disabled=false;
+                    document.getElementById('j_idt6:attrRed').disabled=false;
+                    document.getElementById('j_idt6:key').disabled=false;
+                } 
+                else {
+                    document.getElementById('j_idt6:authnRed').disabled=true;
+                    document.getElementById('j_idt6:attrRed').disabled=true;
+                    document.getElementById('j_idt6:key').disabled=true;                    
+                }
+            }
+        </script>
+        <f:metadata>
+		    <f:event type="preRenderView" listener="#{tenantAdministrationBean.canViewPageRedirecter}" />
+		</f:metadata>
+    </h:head>
+    <h:body onload="changePossibilities()">
+    <table border="0">
+        <h:form>
+        <tr><td><p>Tenant name:</p></td><td>
+            <h:inputText
+                    id="name"
+                    title="Tenant Name:"
+                    value="#{tenantAdministrationBean.name}">
+                </h:inputText></td></tr>
+        <tr><td><p>Subtenant of:</p></td><td>
+                <h:selectOneMenu value="#{tenantAdministrationBean.superTenant}">
+                    <f:selectItem itemValue="#{null}" itemLabel="---" />
+                    <f:selectItems value="#{tenantDescriptionBean.tenantListing}" />
+                </h:selectOneMenu>
+             	</td></tr>
+        <tr><td></td><td>
+                <h:selectBooleanCheckbox
+                    id="federated"
+                    value="#{tenantAdministrationBean.federated}" onchange="changePossibilities()" /> Federated</td></tr>
+        <tr><td><p>Authentication Request Handler URL:</p></td><td>
+                <h:inputText
+                    id="authnRed"
+                    title="Identity provider authentication handler URL:"
+                    value="#{tenantAdministrationBean.authnRqEndpoint}">
+                
+                </h:inputText></td></tr>
+        <tr><td><p>Attribute Request Handler URL:</p></td><td>
+                <h:inputText
+                    id="attrRed"
+                    title="Identity provider attribute handler URL:"
+                    value="#{tenantAdministrationBean.attrRqEndpoint}">
+                
+                </h:inputText></td></tr>
+         <tr><td><p>Public Key:</p></td><td>
+                <h:inputTextarea
+                    id="key"
+                    value="#{tenantAdministrationBean.publicKey}"
+                    title="Public Key of Identity Provider:"
+                    readonly="">
+                </h:inputTextarea></td></tr>
+        <tr><td></td><td>
+                <h:commandButton id="submit" value="Submit"
+                                 action="#{tenantAdministrationBean.submit}"/>
+                                 </td></tr>
+            <h:message showSummary="true" showDetail="false"
+                       style="color: #d20005;
+                       font-family: 'New Century Schoolbook', serif;
+                       font-style: oblique;
+                       text-decoration: overline"
+                       id="errors1"
+                       for="name"/>
+
+        </h:form>
+        </table>
+    </h:body>
+</html>
+

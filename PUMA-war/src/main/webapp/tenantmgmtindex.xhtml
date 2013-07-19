@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+      <h:head>
+        <f:metadata>
+		    <f:event type="preRenderView" listener="#{tenantManagementBean.canViewPageRedirecter}" />
+		</f:metadata>
+        <title>Tenant Management</title>
+        
+		<style type="text/css">
+		#top {
+			margin: 20px 20px 0px 20px;
+			padding: 10px;
+			border: 0px solid #ccc;
+			height: 100px; /* ie5win fudge begins */
+			voice-family: "\"}\"";
+			voice-family:inherit;
+			height: 70px;
+			}
+		html>body #top {
+			height: 70px; /* ie5win fudge ends */
+			}
+		#left {
+			position: absolute;
+			top: 120px;
+			left: 0px;
+			margin: 20px;
+			padding: 10px;
+			border: 0px solid #ccc;
+			width: 280px; /* ie5win fudge begins */
+			voice-family: "\"}\"";
+			voice-family:inherit;
+			}
+		html>body #left {
+			width: 250px; /* ie5win fudge ends */
+			}
+		#middle {
+			margin: 20px 190px 20px 290px;
+			padding: 10px;
+			border: 0px;
+			}
+		#right {
+			position: absolute;
+			top: 120px;
+			right: 0px; /* Opera5.02 will show a space 
+			at right when there is no scroll bar */
+			margin: 20px;
+			padding: 10px;
+			border: 0px solid #ccc;
+			voice-family: "\"}\"";
+			voice-family:inherit;
+			width: 20px;
+			}
+		html>body #right {
+			width: 20px; /* ie5win fudge ends */
+		}
+		a {
+			text-decoration: none;
+			color: black;
+		}
+		table {
+			border: 1px solid black;
+			border-collapse:collapse;
+		}
+		.sectionHeader {
+			border: 1px solid black;
+			background: black;
+			color: white;
+			font-weight: bold;
+		}
+		td>a {			
+			margin-left: 10px;
+		}
+		td>p {			
+			margin-left: 10px;
+		}
+		iframe {
+			width: 100%;
+			height: 500px;
+			
+		}
+		</style>
+    </h:head>
+    <h:body>
+    <div id="top">
+        		<h1 align="center">Tenant management</h1>
+    		</div>
+    	<div id="left">
+    				<!-- Panel -->
+    				<table class="navigationDiv">
+    					<tr><td class="sectionHeader">User Management Panel</td></tr>
+    					<tr><td><a href="useradd.jsf" target="contentTarget">Add user</a></td></tr>
+    					<tr><td><a href="userattributeadd.jsf" target="contentTarget">User Property Management</a></td></tr>
+    					<tr><td class="sectionHeader">Tenant Management Panel</td></tr>
+    					<tr><td><a href="tenantmgmt.jsf" target="contentTarget">Tenant Property Management</a></td></tr>
+    					<tr><td><a href="subtenantadd.jsf" target="contentTarget">New Subtenant</a></td></tr>
+    					<tr><td><a href="servicesubscription.jsf" target="contentTarget">Subscribe To Service</a></td></tr>
+    					<tr><td class="sectionHeader">Actions</td></tr>
+		        		<tr><td><h:form><h:commandLink action="#{tenantManagementBean.invalidate()}" target="_blank" value="Logout"/></h:form></td></tr>
+    				</table>
+    				</div>
+    	<div id="middle">
+    				<iframe name="contentTarget" src="" frameborder="0" scrolling="no"></iframe><br />
+    				<!-- Contents -->
+    				<p>Logged in as <h:outputText value="#{tenantManagementBean.userName()}" /> for <h:outputText value="#{tenantManagementBean.tenantName()}" /></p>
+    			
+    	</div>
+    	<div id="right"></div>
+    	
+    		
+    </h:body>
+    </html>

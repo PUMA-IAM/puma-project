@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name>PUMA Service Provider Access Control Middleware</display-name>
+  <listener>
+	    <listener-class>
+	        com.sun.xml.ws.transport.http.servlet.WSServletContextListener
+	    </listener-class>
+	</listener>
+	<servlet>
+	    <servlet-name>jaxws</servlet-name>
+	    <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>jaxws</servlet-name>
+	    <url-pattern>/AccessControlService</url-pattern>
+	</servlet-mapping>    
+    <resource-ref>
+        <description>MySQL database connection</description>
+        <res-ref-name>jdbc/puma</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>    
+    <!-- FACES -->
+    <context-param>
+        <param-name>javax.faces.PROJECT_STAGE</param-name>
+        <param-value>Production</param-value>
+    </context-param>    
+    <servlet>
+      <servlet-name>Faces Servlet</servlet-name>
+      <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+      <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+      <servlet-name>Faces Servlet</servlet-name>
+      <url-pattern>*.jsf</url-pattern>
+    </servlet-mapping>
+    <!-- ... -->
+    <servlet>
+        <servlet-name>AttributeRetrievalServlet</servlet-name>
+        <servlet-class>puma.sp.servlets.AttributeRetrievalServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DiscoveryServlet</servlet-name>
+        <servlet-class>puma.sp.servlets.DiscoveryServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AuthenticationRequestServlet</servlet-name>
+        <servlet-class>puma.sp.servlets.AuthenticationRequestServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AuthenticationResponseServlet</servlet-name>
+        <servlet-class>puma.sp.servlets.AuthenticationResponseServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServiceAccessServlet</servlet-name>
+        <servlet-class>puma.sp.servlets.ServiceAccessServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InitializationServlet</servlet-name>
+        <servlet-class>puma.sp.servlets.population.InitializationServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CheckupServlet</servlet-name>
+        <servlet-class>puma.sp.servlets.population.CheckupServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AttributeRetrievalServlet</servlet-name>
+        <url-pattern>/AttributeRetrievalServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DiscoveryServlet</servlet-name>
+        <url-pattern>/DiscoveryServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AuthenticationRequestServlet</servlet-name>
+        <url-pattern>/AuthenticationRequestServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AuthenticationResponseServlet</servlet-name>
+        <url-pattern>/AuthenticationResponseServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServiceAccessServlet</servlet-name>
+        <url-pattern>/ServiceAccessServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InitializationServlet</servlet-name>
+        <url-pattern>/InitializationServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckupServlet</servlet-name>
+        <url-pattern>/CheckupServlet</url-pattern>
+    </servlet-mapping>
+</web-app>

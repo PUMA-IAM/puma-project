@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Where are you from?</title>
+    </h:head>
+    <h:body>
+        <h1>Where are you from?</h1>
+        <h:form>
+            <p> <h:selectOneMenu id="selection" value="#{wayfBean.chosenTenant}">
+                    <f:selectItems value="#{wayfBean.tenantListing}"/>
+				</h:selectOneMenu>
+                            
+                <h:commandButton id="submit" value="Submit"
+                                 action="#{wayfBean.next}"/>
+            </p>
+            <h:message showSummary="true" showDetail="false"
+                       style="color: #d20005;
+                       font-family: 'New Century Schoolbook', serif;
+                       font-style: oblique;
+                       text-decoration: overline"
+                       id="errors1"
+                       for="selection"/>
+
+        </h:form>
+    </h:body>
+</html>
+

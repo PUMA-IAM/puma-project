@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+      <h:head>
+        <title>Where are you from?</title>
+        <style type="text/css">
+        .loginDiv {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			text-align: center;        
+			background-image: url('resources/images/puma.png');
+			width:800px;
+			height:533px;
+			margin-left: -400px; /*half width*/
+			margin-top: -266px; /*half height*/
+		}
+		h2 {
+			color: white;
+		}
+        </style>
+    </h:head>
+    <h:body>
+        <div class="loginDiv">
+            <div align="left">
+            	<div style="height: 300px;">
+            	<p></p>
+		        </div>
+		        <div style="height: 75px;">
+		            <h2>
+		                Where are you from?
+		            </h2>
+				</div>
+				<div>
+			        <h:form>        
+			            <p> <h:selectOneMenu id="selection" value="#{tenantDescriptionBean.chosenTenant}">
+			                    <f:selectItems value="#{tenantDescriptionBean.tenantListing}"/>
+							</h:selectOneMenu>
+			                            
+			                <h:commandButton id="submit" value="Submit"
+			                                 action="#{tenantDescriptionBean.login}"/>
+			            </p>
+			            <h:message showSummary="true" showDetail="false"
+			                       style="color: #d20005;
+			                       font-family: 'New Century Schoolbook', serif;
+			                       font-style: oblique;
+			                       text-decoration: overline"
+			                       id="errors1"
+			                       for="selection"/>
+			
+			        </h:form>					
+				</div>
+        	</div>
+        </div>
+    </h:body>
+    </html>

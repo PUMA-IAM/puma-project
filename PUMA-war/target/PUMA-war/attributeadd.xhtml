@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Add new attribute</title>
+        <f:metadata>
+		    <f:event type="preRenderView" listener="#{attributeSubmittionBean.canViewPageRedirecter}" />
+		</f:metadata>
+    </h:head>
+    <h:body>
+            <h2>
+                New Attribute
+            </h2>
+        <h:form>
+            <table border="0">
+         		<tr><td><p>Attribute type name:</p></td><td>
+            <h:inputText
+                    id="attributeName"
+                    title="Name:"
+                    value="#{attributeSubmittionBean.name}">
+                </h:inputText></td></tr>
+                <tr><td><p></p></td><td>
+                <h:commandButton id="submit" value="Submit"
+                                 action="#{attributeSubmittionBean.submit}"/></td></tr>
+            </table>
+            <h:message showSummary="true" showDetail="false"
+                       style="color: #d20005;
+                       font-family: 'New Century Schoolbook', serif;
+                       font-style: oblique;
+                       text-decoration: overline"
+                       id="errors1"
+                       for="attributeName"/>
+
+        </h:form>
+    </h:body>
+</html>
+
