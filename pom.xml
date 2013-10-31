@@ -21,6 +21,7 @@
   	<module>../puma-central-puma-as</module>
   	<module>../puma-tenant-attribute-service</module>
   	<module>../puma-webapp-example</module>
+  	<module>../puma-central-puma-pdp-rmi-utils</module>
   </modules>
   <build>
         <pluginManagement>
