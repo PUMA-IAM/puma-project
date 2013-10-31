@@ -18,6 +18,9 @@
   	<module>../puma-sunxacml</module>
   	<module>../puma-tenant-pdp</module>
   	<module>../puma-util</module>
+  	<module>../puma-central-puma-as</module>
+  	<module>../puma-tenant-attribute-service</module>
+  	<module>../puma-webapp-example</module>
   </modules>
   <build>
         <pluginManagement>
