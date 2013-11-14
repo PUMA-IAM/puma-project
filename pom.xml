@@ -1,41 +1,46 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>puma</groupId>
-  <artifactId>main</artifactId>
-  <version>1.0</version>
-  <packaging>pom</packaging>
-  <name>PUMA</name>
-  <description>Main project for PUMA. Includes the POM</description>
-  <modules>
-  	<module>../puma-application</module>
-  	<module>../puma-application-pap</module>
-  	<module>../puma-application-pdp</module>
-  	<module>../puma-central-puma-pdp</module>
-  	<module>../puma-idp</module>
-  	<module>../puma-pep-utils</module>
-  	<module>../puma-proxy</module>
-  	<module>../puma-service</module>
-  	<module>../puma-sunxacml</module>
-  	<module>../puma-tenant-pdp</module>
-  	<module>../puma-util</module>
-  	<module>../puma-central-puma-as</module>
-  	<module>../puma-tenant-attribute-service</module>
-  	<module>../puma-webapp-example</module>
-  	<module>../puma-central-puma-pdp-rmi-utils</module>
-  </modules>
-  <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>2.3.2</version>
-                    <configuration>
-                        <source>1.6</source>
-                        <target>1.6</target>
-                        <compilerArgument></compilerArgument>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>puma</groupId>
+	<artifactId>main</artifactId>
+	<version>1.0</version>
+	<packaging>pom</packaging>
+	<name>PUMA</name>
+	<description>Main project for PUMA. Includes the POM</description>
+	<modules>
+		<module>../puma-application</module>
+<!-- 		<module>../puma-application-pap</module> -->
+		<module>../puma-application-pdp</module>
+		<module>../puma-central-attribute-service</module>
+		<module>../puma-central-puma-pdp</module>
+		<module>../puma-central-puma-pdp-rmi-utils</module>
+		<module>../puma-idp</module>
+		<module>../puma-pep-utils</module>
+		<module>../puma-proxy</module>
+		<module>../puma-service</module>
+<!-- 		<module>../puma-service-authentication</module> -->
+		<module>../puma-service-mgmt</module>
+		<module>../puma-service-mgmt-provider</module>
+<!-- 		<module>../puma-service-mgmt-tenant</module> -->
+		<module>../puma-sunxacml</module>
+		<module>../puma-tenant-attribute-service</module>
+		<module>../puma-tenant-pdp</module>
+		<module>../puma-util</module>
+		<module>../puma-webapp-example</module>
+	</modules>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.3.2</version>
+					<configuration>
+						<source>1.6</source>
+						<target>1.6</target>
+						<compilerArgument></compilerArgument>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 </project>
