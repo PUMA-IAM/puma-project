@@ -8,25 +8,25 @@
 	<name>PUMA</name>
 	<description>Main project for PUMA. Includes the POM</description>
 	<modules>
-		<module>../puma-application</module>
+		<module>../puma-application</module> 
 <!-- 		<module>../puma-application-pap</module> -->
 		<module>../puma-application-pdp</module>
-		<module>../puma-central-puma-as</module>
-		<module>../puma-central-puma-pdp</module>
-		<module>../puma-central-puma-pdp-rmi-utils</module>
+<!-- 		<module>../puma-central-puma-as</module> -->
+		<module>../puma-central-pdp</module>
+		<module>../puma-central-pdp-rmi-utils</module>
 		<module>../puma-pep-utils</module>
 		<module>../puma-service-authentication</module>
 		<module>../puma-service-mgmt</module>
 		<module>../puma-service-mgmt-provider</module>
 		<module>../puma-service-mgmt-tenant</module>
 		<module>../puma-sunxacml</module>
-		<module>../puma-tenant-attribute-service</module>
-		<module>../puma-tenant-pdp</module>
-		<module>../puma-tenant-authentication</module>
-		<module>../puma-tenant-proxy</module>
-		<module>../puma-tenant-mgmt</module>
+<!-- 		<module>../puma-tenant-attribute-service</module> -->
+<!-- 		<module>../puma-tenant-pdp</module> -->
+<!-- 		<module>../puma-tenant-authentication</module> -->
+<!-- 		<module>../puma-tenant-proxy</module> -->
+<!-- 		<module>../puma-tenant-mgmt</module> -->
 		<module>../puma-util</module>
-		<module>../puma-webapp-example</module>
+<!-- 		<module>../puma-webapp-example</module> -->
 	</modules>
 	<build>
 		<pluginManagement>
