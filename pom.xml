@@ -10,6 +10,7 @@
 	<modules>
 		<module>../puma-pip-utils</module>
 		<module>../puma-pep-utils</module>
+		<module>../puma-rest-utils</module> 
 		<module>../puma-central-pdp-rmi-utils</module>
 		<module>../puma-util</module>
 		<module>../puma-sunxacml</module>
